@@ -1,0 +1,15 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
+    [
+      "transform-imports",
+      {
+        "my-library/?(((\\w*)?/?)*)": {
+          "transform": "my-library/${1}/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ]
+}
