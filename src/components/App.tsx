@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Header></Header>
-      <Container maxWidth="lg" sx={{ backgroundColor: 'red', height: '200px' }}></Container>
+      <Container maxWidth="lg" sx={{ backgroundColor: '#6856FF', height: '1000px' }}></Container>
     </>
   );
 };
