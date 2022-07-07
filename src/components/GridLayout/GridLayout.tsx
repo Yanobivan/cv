@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
 import '../../styles/gridLayout.scss';
 
 interface GridLayoutProps {
@@ -9,7 +8,7 @@ interface GridLayoutProps {
 export const GridLayout: React.FC<GridLayoutProps> = ({ ...props }) => {
   return (
     <>
-      <Box className="grid__box">{props.children}</Box>
+      <div className="grid__box">{props.children}</div>
     </>
   );
 };

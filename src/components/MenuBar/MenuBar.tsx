@@ -12,7 +12,6 @@ interface MenuBarProps extends MenuProps {
 
 export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
   const menuTitle = localStorage.getItem(props.settings.key) || props.settings.values[0];
-
   const [name, setName] = useState(menuTitle);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 

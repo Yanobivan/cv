@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 
-import App from './components/App';
+import App from './App';
 
 const theme = createTheme({
   palette: {

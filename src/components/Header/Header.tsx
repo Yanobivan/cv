@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../../styles/header.scss';
-import { MenuBar } from '../MenuBar';
+import '../../styles/Header.scss';
+import { MenuBar } from '../MenuBar/MenuBar';
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { HideOnScroll, toBot } from './utils';
 import { ContactMail, AccountCircle, AccountTree } from '@mui/icons-material';

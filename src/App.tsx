@@ -1,11 +1,12 @@
 import React from 'react';
 
-import '../styles/normalize.css';
-import '../styles/app.scss';
+import './styles/normalize.css';
+import './styles/App.scss';
 
-import { Header } from './Header/Header';
-import { GridLayout } from './GridLayout/GridLayout';
+import { Header } from './components/Header/Header';
+import { GridLayout } from './components/GridLayout/GridLayout';
 import { Box } from '@material-ui/core';
+import { Card } from './components/Card/Card';
 
 const footerStyles = {
   backgroundColor: '#00BFFF',
@@ -38,12 +39,13 @@ const App = () => {
     <>
       <Header />
       <GridLayout>
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </GridLayout>
       <Box style={footerStyles}></Box>
     </>
