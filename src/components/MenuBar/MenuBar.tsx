@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Menu } from '@mui/material';
 import { Box, Button, MenuItem, MenuProps, Tooltip, Typography } from '@material-ui/core';
 
+import '../../styles/MenuBar.scss';
+
 interface MenuBarProps extends MenuProps {
   settings: {
     values: string[];
@@ -11,7 +13,9 @@ interface MenuBarProps extends MenuProps {
 }
 
 export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
-  const menuTitle = localStorage.getItem(props.settings.key) || props.settings.values[0];
+  const { settings } = props;
+
+  const menuTitle = localStorage.getItem(settings.key) || settings.values[0];
   const [name, setName] = useState(menuTitle);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -19,7 +23,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
     setAnchorElUser(event.currentTarget);
   };
   const handleCloseUserMenu = (signature: string) => {
-    localStorage.setItem(props.settings.key, signature);
+    localStorage.setItem(settings.key, signature);
     setName(signature);
     setAnchorElUser(null);
   };
@@ -49,8 +53,9 @@ export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
           handleCloseUserMenu(name);
         }}
       >
-        {props.settings.values.map((setting) => (
+        {settings.values.map((setting) => (
           <MenuItem
+            className="menu__item"
             key={setting}
             onClick={() => {
               handleCloseUserMenu(setting);

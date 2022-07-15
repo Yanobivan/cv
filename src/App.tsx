@@ -10,44 +10,26 @@ import { Card } from './components/Card/Card';
 
 const footerStyles = {
   backgroundColor: '#00BFFF',
-  border: '2px red solid',
-  height: '400px',
+  height: '200px',
   width: '100%',
 };
-
-export function GridItem() {
-  return (
-    <>
-      <div
-        style={{
-          backgroundColor: '#00BFFF',
-          border: '2px red solid',
-          height: '400px',
-          width: '500px',
-          minWidth: '200px',
-          marginLeft: '15px',
-          marginBottom: '15px',
-        }}
-        className="card"
-      ></div>
-    </>
-  );
-}
 
 const App = () => {
   return (
     <>
-      <Header />
-      <GridLayout>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </GridLayout>
-      <Box style={footerStyles}></Box>
+      <div className="app">
+        <Header />
+        <GridLayout>
+          <Card caption="project 1" />
+          <Card caption="project 2" />
+          <Card caption="project 3" />
+          <Card caption="project 4" />
+          <Card caption="project 5" />
+          <Card caption="project 6" />
+          <Card caption="project 7" />
+        </GridLayout>
+        <Box style={footerStyles}></Box>
+      </div>
     </>
   );
 };

@@ -1,24 +1,24 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import '../../styles/Card.scss';
 
 interface CardProps {
   children?: React.ReactNode;
-  signature?: string;
-  image?: string;
+  caption?: string;
+  image?: boolean;
 }
 
-const cardStyle: React.CSSProperties = {
-  width: '400px',
-  height: '500px',
-  backgroundColor: 'red',
-  marginBottom: '15px',
-  marginRight: '15px',
-};
-
 export const Card: React.FC<CardProps> = ({ ...props }) => {
+  const { image, caption } = props;
   return (
     <>
-      <Box style={cardStyle} className="card__box"></Box>
+      <div className="card__box">
+        {image ?? (
+          <div className="card__divider">
+            <p>IN PROGRESS</p>
+          </div>
+        )}
+        {caption ? <p className="card__caption">{caption}</p> : null}
+      </div>
     </>
   );
 };
