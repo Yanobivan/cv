@@ -1,0 +1,24 @@
+.header__bar {
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.header__icon {
+    margin-right: 5px;
+}
+
+.header__box {
+    width: 1250px;
+    display: flex;
+}
+
+.info-box {
+    display: flex;
+    margin-left: auto;
+}
+
+.css-11b3ww9-MuiPaper-root-MuiAppBar-root {
+    z-index: 5 !important; // That needs to deactivate MUI styles
+}
+

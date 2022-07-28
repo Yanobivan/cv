@@ -1,36 +1,35 @@
-import React from 'react';
+import React, { ReactNode, useState } from 'react';
 
 import './styles/normalize.css';
 import './styles/App.scss';
 
 import { Header } from './components/Header/Header';
 import { GridLayout } from './components/GridLayout/GridLayout';
-import { Box } from '@material-ui/core';
 import { Card } from './components/Card/Card';
+import { Footer } from './components/Footer/Footer';
 
-const footerStyles = {
-  backgroundColor: '#00BFFF',
-  height: '200px',
-  width: '100%',
-};
+interface dataCardProps {
+  caption: string;
+}
 
-const App = () => {
+const dataCard: dataCardProps[] = [
+  { caption: 'project 1' },
+  { caption: 'project 2' },
+  { caption: 'project 3' },
+  { caption: 'project 4' },
+];
+
+const App: React.FC = () => {
   return (
-    <>
-      <div className="app">
-        <Header />
-        <GridLayout>
-          <Card caption="project 1" />
-          <Card caption="project 2" />
-          <Card caption="project 3" />
-          <Card caption="project 4" />
-          <Card caption="project 5" />
-          <Card caption="project 6" />
-          <Card caption="project 7" />
-        </GridLayout>
-        <Box style={footerStyles}></Box>
-      </div>
-    </>
+    <div className="app">
+      <Header />
+      <GridLayout>
+        {dataCard.map((card): ReactNode => {
+          return <Card caption={card.caption} />;
+        })}
+      </GridLayout>
+      <Footer />
+    </div>
   );
 };
 

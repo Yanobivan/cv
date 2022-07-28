@@ -11,5 +11,8 @@
         }
       }
     ]
-  ]
+  ],
+  "assumptions": {
+    "setPublicClassFields": false
+  }
 }

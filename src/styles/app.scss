@@ -3,3 +3,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+.scrollbar-width {
+    padding: 0 calc(20px - (100vw - 100%)) 0 0;
+}
+
+.attention-border {
+    border: 5px dashed red;
+}

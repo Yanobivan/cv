@@ -5,6 +5,15 @@ import { ThemeProvider, createTheme } from '@material-ui/core';
 import App from './App';
 
 const theme = createTheme({
+  overrides: {
+    MuiIconButton: {
+      root: {
+        '&:hover': {
+          backgroundColor: 'red',
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: '#61dafb',

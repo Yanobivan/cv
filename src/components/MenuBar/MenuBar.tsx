@@ -9,6 +9,7 @@ interface MenuBarProps extends MenuProps {
   settings: {
     values: string[];
     key: string;
+    name: string;
   };
 }
 
@@ -16,7 +17,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
   const { settings } = props;
 
   const menuTitle = localStorage.getItem(settings.key) || settings.values[0];
-  const [name, setName] = useState(menuTitle);
+  const [name, setName] = useState<string>(menuTitle);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -30,7 +31,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ ...props }) => {
 
   return (
     <Box sx={{ flexGrow: 0 }}>
-      <Tooltip title={name}>
+      <Tooltip title={settings.name}>
         <Button color="inherit" onClick={handleOpenUserMenu}>
           {name}
         </Button>
